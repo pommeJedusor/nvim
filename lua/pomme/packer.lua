@@ -52,4 +52,12 @@ return require("packer").startup(function(use)
 
 	-- tree file
 	use("nvim-tree/nvim-tree.lua")
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
 end)
