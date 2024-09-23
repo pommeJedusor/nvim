@@ -60,4 +60,7 @@ return require("packer").startup(function(use)
 			require("toggleterm").setup()
 		end,
 	})
+
+	-- autoclose.nvim
+	use("m4xshen/autoclose.nvim")
 end)
