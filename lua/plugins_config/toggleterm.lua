@@ -51,14 +51,14 @@ end
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }
 	vim.keymap.set("t", "jk", [[<C-\><C-n>]], opts)
-	vim.keymap.set("t", "<C-h>", _float_terminal_toggle, opts)
-	vim.keymap.set("t", "<C-l>", _vertical_terminal_toggle, opts)
-	vim.keymap.set("t", "<C-j>", _horizontal_terminal_toggle, opts)
+	vim.keymap.set("t", "<C-n>", _float_terminal_toggle, opts)
+	vim.keymap.set("t", "<C-m>", _vertical_terminal_toggle, opts)
+	vim.keymap.set("t", "<C-i>", _horizontal_terminal_toggle, opts)
 end
 
 -- set keymaps for terminals
-vim.api.nvim_set_keymap("n", "<C-h>", "<cmd>lua _float_terminal_toggle()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-l>", "<cmd>lua _vertical_terminal_toggle()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-j>", "<cmd>lua _horizontal_terminal_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-n>", "<cmd>lua _float_terminal_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-m>", "<cmd>lua _vertical_terminal_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-i>", "<cmd>lua _horizontal_terminal_toggle()<CR>", { noremap = true, silent = true })
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
